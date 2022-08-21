@@ -16,9 +16,6 @@ const heroes = {
 export const buscarHeroe = (heroId) => {
   const heroe = heroes[heroId]
 
-  /* const promesa = new Promise()
-  return promesa */
-
   return new Promise((resolve, reject) => {
     if (heroe) {
       resolve(heroe)
@@ -27,3 +24,17 @@ export const buscarHeroe = (heroId) => {
     }
   })
 }
+
+const promesaLenta = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promesa lenta'), 2000)
+})
+
+const promesaMedia = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promesa media'), 1500)
+})
+
+const promesaRapida = new Promise((resolve, reject) => {
+  setTimeout(() => resolve('Promesa rápida'), 1000)
+})
+
+export { promesaLenta, promesaMedia, promesaRapida }
