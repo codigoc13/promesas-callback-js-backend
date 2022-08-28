@@ -1,17 +1,5 @@
-import { obtenerHeroesArr, obtenerHeroeAwait } from './js/await'
+import { heroesCiclo, heroeIfAwait } from './js/await'
 
-// console.time('await')
+heroesCiclo()
 
-// obtenerHeroesArr().then((heroes) => {
-//   console.table(heroes)
-//   console.timeEnd('await')
-// })
-
-console.time('await')
-
-obtenerHeroeAwait('capi2')
-  .then((heroe) => {
-    console.log(heroe)
-    console.timeEnd('await')
-  })
-  .catch(console.warn)
+heroeIfAwait('iron')
