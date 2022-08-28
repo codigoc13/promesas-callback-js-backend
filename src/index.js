@@ -1,20 +1,7 @@
-import './styles.css'
+import { obtenerHeroesArr } from './js/await'
 
-import { buscarHeroe, buscarHeroeAsync } from './js/promesas'
-// import { promesaLenta, promesaMedia, promesaRapida } from './js/promesas'
+// const heroes = obtenerHeroesArr()
 
-// promesaLenta.then((resp) => console.log(resp))
-// promesaMedia.then(console.log)
-// promesaRapida.then(console.log)
+// console.table(heroes)
 
-// El Promise.race nos permite ejecutar las promesas en conjunto y obtener el mensaje de la promesa que se resuelve más rápido.
-
-// Promise.race([promesaLenta, promesaMedia, promesaRapida]).then(console.log)
-
-buscarHeroe('capi')
-  .then((heroe) => console.log(heroe))
-  .catch(console.warn)
-
-buscarHeroeAsync('iron2')
-  .then((heroe) => console.log(heroe))
-  .catch(console.warn)
+obtenerHeroesArr().then(console.table)
