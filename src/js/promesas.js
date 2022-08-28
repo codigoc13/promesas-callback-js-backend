@@ -25,6 +25,17 @@ export const buscarHeroe = (heroId) => {
   })
 }
 
+export const buscarHeroeAsync = async (heroId) => {
+  const heroe = heroes[heroId]
+
+  if (heroe) {
+    return heroe
+  } else {
+    // throw Error(`No existe un héroe con el id ${heroId}`)
+    throw `No existe un héroe con el id ${heroId}`
+  }
+}
+
 const promesaLenta = new Promise((resolve, reject) => {
   setTimeout(() => resolve('Promesa lenta'), 2000)
 })
